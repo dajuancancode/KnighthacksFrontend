@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Image, StyleSheet, View, Text } from 'react-native';
+import { ImageBackground, StyleSheet, Text, Button, View} from 'react-native';
+
 
 const myPic = require('../assets/shop2.png')
 var styles = StyleSheet.create({
@@ -7,6 +8,8 @@ var styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    height: '100%',
+    width: '100%'
   },
   image: {
     height: '100%',
@@ -15,18 +18,28 @@ var styles = StyleSheet.create({
   text: {
     color: '#fff',
     fontSize: 30,
+  },
+  button: {
+    width: 75,
     position: 'absolute'
   }
 })
 
-export default class LandingScreen extends Component {
+
+export default class LandingScreen extends React.Component {
+
+  static navigationOptions ={
+    header: null
+  }
+
   render() {
     return (
-     <View style={styles.landingContainer} >
-      <Image source={myPic} style={styles.image}  />
-      <Text style={styles.text}>Hello World</Text>
-     </View>
+      <View style={{flex: 1}}>
+        <ImageBackground source={myPic} style={styles.landingContainer}>
+          <Text style={styles.text}>What's Next</Text>
+          <Button title="Get Started" onPress={() => this.props.navigation.navigate('Start')} />
+        </ImageBackground>
+      </View>
     );
   }
 }
-
