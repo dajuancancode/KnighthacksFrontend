@@ -12,6 +12,7 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "react-native-fontawesome": "^6.0.1",
     "react-native-gesture-handler": "^1.0.17",
+    "react-native-swipe-cards": "^0.1.1",
     "react-navigation": "^3.3.2"
   },
   "devDependencies": {
